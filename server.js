@@ -9,14 +9,13 @@ const app = express();
 
 app.use(cors());
 
-// parse requests of content-type - application/json
 app.use(express.json());
 
-// parse requests of content-type - application/x-www-form-urlencoded
+
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", routes)
-// set port, listen for requests
+
 const PORT = process.env.PORT || 8080;
 db.sequelize.sync().then(()=>{
     app.listen(PORT, () => {
