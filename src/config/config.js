@@ -16,7 +16,7 @@ const config = {
         dialect: process.env.DB_DIALECT || "postgres",
     },
     production: {
-        use_env_variable: DATABASE_URL || "",
+        use_env_variable: "DATABASE_URL" || "",
         dialect: "postgres",
         dialectOptions: {
           ssl: {
