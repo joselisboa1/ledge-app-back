@@ -5,7 +5,10 @@ const router = express.Router();
 router.get("/:link", async(req, res) => {
     let {link} = req.params
     const [visualization, created] = await Visualization.findOrCreate({
-        where: {link: link}
+        where: {link: link},
+        defaults: {
+            count: 0
+        }
     })
     res.status(200)
     res.json({visualization})
