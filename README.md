@@ -24,6 +24,11 @@ Para instalar las dependencias necesarias se usa el comando:
 npm install
 ```
 ## Ejecutar el backend
+Primero se crea la base de datos y se migra:
+```
+npx sequelize-cli db:create
+npx sequelize-cli db:migrate
+```
 Para ejecutar el backend se utiliza el comando:
 ```
 node server.js
